@@ -1,1 +1,91 @@
 
+* {
+  font-family: Arial;
+}
+
+body {
+  background-image:
+  url("https://media.tenor.com/7bBINkQ326MAAAAd/animation-art.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2); 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white ;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.isi-login {
+  background-color: rgba(0,0,0,0.61);
+  border-radius: 30px;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 1px 1px 1px  #5a5a5a;
+}
+
+.form {
+  margin: 20px 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #4689ffbd;
+}
+#email, #password, #name {
+  margin: 10px;
+  height: 30px;
+  width: 250px;
+  
+}
+
+.tombol-login {
+  background-color: #c7c7c7;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.tombol-login:hover {
+  background-color: #848484;
+  scale: 1.05;
+}
+.not-have {
+  color: #ffffff86;
+}
+
+.not-have:hover {
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #ffffff26;
+}
