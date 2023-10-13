@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            transition: background-color 0.5s;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .light-mode {
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+    <title>Toggle Mode</title>
+</head>
+<body>
+    <h1>Toggle Mode Example</h1>
+    <label for="modeToggle1">Toggle 1</label>
+    <input type="checkbox" id="modeToggle1">
+    <label for="modeToggle2">Toggle 2</label>
+    <input type="checkbox" id="modeToggle2">
+    <button id="toggleButton">Toggle Mode</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const modeToggle1 = document.getElementById('modeToggle1');
+    const modeToggle2 = document.getElementById('modeToggle2');
+
+    // Retrieve mode from local storage
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'dark') {
+        modeToggle1.checked = true;
+        modeToggle2.checked = true;
+        toggleMode('dark');
+    }
+
+    // Function to update both toggles
+    function updateToggles(state) {
+        modeToggle1.checked = state;
+        modeToggle2.checked = state;
+    }
+
+    // Toggle mode based on checkbox state
+    modeToggle1.addEventListener('change', function() {
+        const isChecked = modeToggle1.checked;
+        updateToggles(isChecked);
+        toggleMode(isChecked ? 'dark' : 'light');
+    });
+
+    modeToggle2.addEventListener('change', function() {
+        const isChecked = modeToggle2.checked;
+        updateToggles(isChecked);
+        toggleMode(isChecked ? 'dark' : 'light');
+    });
+
+    // Toggle mode function
+    function toggleMode(mode) {
+        document.body.classList.toggle('dark-mode', mode === 'dark');
+        document.body.classList.toggle('light-mode', mode === 'light');
+
+        // Save mode to local storage
+        localStorage.setItem('mode', mode);
+    }
+
+    // Button to toggle mode
+    const toggleButton = document.getElementById('toggleButton');
+    toggleButton.addEventListener('click', function() {
+        const isChecked = modeToggle1.checked && modeToggle2.checked;
+        updateToggles(!isChecked);
+        toggleMode(isChecked ? 'dark' : 'light');
+    });
+});
+</script>
+</body>
+</html>
