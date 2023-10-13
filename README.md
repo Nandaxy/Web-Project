@@ -1,5 +1,5 @@
 # Web-Project
-Isinya source code website saya yang pernah dibuat
+Isinya source code website static saya yang pernah dibuat
   
 **Demo:**  
   
